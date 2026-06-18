@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reviewable Reviewer"
+  short_description: "Review code in Jacob's Reviewable style"
+  default_prompt: "Use $reviewable-reviewer-skill to perform a deep Reviewable-oriented code review."
