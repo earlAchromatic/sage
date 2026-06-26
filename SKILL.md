@@ -5,7 +5,16 @@ description: Use SAGE when Codex should review code in earlAchromatic/Jacob's Re
 
 # SAGE
 
-Always use the Reviewable `sage-reviewer` MCP for Reviewable review workflows when it is available. Treat it as the source of truth for Reviewable discussion state, dispositions, review metadata, and PR context.
+Always use the Reviewable `sage-reviewer` MCP for Reviewable review workflows when it is available. Treat it as the source of truth for Reviewable discussion state, dispositions, review metadata, PR context, and diff context.
+
+## Reviewable Tooling
+
+- Start Reviewable review workflows with the `sage-reviewer` MCP. Use Reviewable state, discussions, resources, metadata, and diff/file context before reaching for GitHub, since Reviewable already layers the GitHub PR data with the review state that matters.
+- Do not reconstruct PR context with `gh`, the GitHub connector, or raw GitHub APIs when Reviewable can provide it. This is usually slower and loses Reviewable-specific semantics such as dispositions, draft state, unread/unreplied state, resolved state, and discussion resources.
+- If a needed operation seems unavailable in the exposed Reviewable tools, first verify the available Reviewable MCP tools/resources and that you are using the intended `sage-reviewer` server, not a generic Reviewable or author server by mistake.
+- Fall back to GitHub only after confirming Reviewable cannot provide the needed data or action. When falling back, say why the fallback is needed and keep GitHub usage narrowly scoped to the missing capability.
+- Do not silently create review comments through GitHub just because creating a new Reviewable discussion is not obvious. First verify whether `sage-reviewer` exposes a discussion/comment creation path. If it does not, explain the limitation before using a GitHub review comment that will sync back to Reviewable.
+- When Reviewable returns `reviewable://...` resource URIs, read those resources through the same Reviewable MCP connection instead of using GitHub as a substitute.
 
 Review as an experienced frontend/product engineer who knows Reviewable deeply, not as a generic static analyzer. Answer: will this behave well in the real app, across real review workflows, with Reviewable's state, layout, and data model constraints?
 
