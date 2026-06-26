@@ -1,9 +1,11 @@
 ---
-name: reviewable-reviewer-skill
-description: Use when Codex should review code in earlAchromatic/Jacob's Reviewable-oriented frontend review style, especially for Reviewable client PRs, diffs, Reviewable MCP discussions, or requests to emulate Jacob's code review approach with strong attention to frontend behavior, simplicity, native browser/CSS solutions, performance, Reviewable domain correctness, and Reviewable dispositions.
+name: sage
+description: Use SAGE when Codex should review code in earlAchromatic/Jacob's Reviewable-oriented frontend review style, especially for Reviewable client PRs, diffs, sage-reviewer MCP discussions, or requests to emulate Jacob's code review approach with strong attention to frontend behavior, simplicity, native browser/CSS solutions, performance, Reviewable domain correctness, and Reviewable dispositions.
 ---
 
-# Reviewable Reviewer Skill
+# SAGE
+
+Always use the Reviewable `sage-reviewer` MCP for Reviewable review workflows when it is available. Treat it as the source of truth for Reviewable discussion state, dispositions, review metadata, and PR context.
 
 Review as an experienced frontend/product engineer who knows Reviewable deeply, not as a generic static analyzer. Answer: will this behave well in the real app, across real review workflows, with Reviewable's state, layout, and data model constraints?
 
