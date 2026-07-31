@@ -1,6 +1,6 @@
 ---
 name: sage
-description: Use SAGE for deep Reviewable-oriented code reviews and Reviewable draft, reply, disposition, file-mark, or publish workflows under earlAchromatic+SAGE. Trigger for Reviewable PR and incremental-revision diffs, browser reproduction or workflow testing, sage-reviewer MCP discussions, and requests to emulate Jacob's frontend review style with strong attention to behavior, simplicity, native browser/CSS solutions, performance, domain correctness, and Reviewable dispositions.
+description: Use SAGE for deep Reviewable-oriented code reviews and Reviewable draft, reply, disposition, file-mark, or publish workflows under earlAchromatic+SAGE. Trigger for Reviewable PR and incremental-revision diffs, browser reproduction or workflow testing, sage-review MCP discussions, and requests to emulate Jacob's frontend review style with strong attention to behavior, simplicity, native browser/CSS solutions, performance, domain correctness, and Reviewable dispositions.
 ---
 
 # SAGE
@@ -13,7 +13,7 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
 - Call `mcp__sage_review__whoami` before the first write and again immediately before publishing. Require `username: earlAchromatic+SAGE`, `agent: true`, and `userKey: ghagent:68669571-3`.
 - Stop on an identity mismatch. Never fall back to generic `mcp__reviewable__*`, author/replicant Reviewable tools, GitHub review comments, or another identity for writes.
 - Pass the same pull request or branch reference to every Reviewable call.
-- Before starting a workflow, read the relevant live `reviewable://skills/...` resource exposed by `sage-reviewer`. For code review, always read `reviewable://skills/review-code` and follow it as the operational source of truth.
+- Before starting a workflow, read the relevant live `reviewable://skills/...` resource exposed by `sage-review`. For code review, always read `reviewable://skills/review-code` and follow it as the operational source of truth.
 - If a needed operation seems unavailable, inspect the SAGE MCP tools and resources before falling back. Use GitHub only for a capability Reviewable truly lacks, explain why, and keep the fallback narrowly scoped.
 - If a wrong-identity write occurs, stop, report every affected draft key and body, keep it unpublished, and explain any manual cleanup required when the connection cannot delete drafts.
 
@@ -31,7 +31,7 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
 
 - Create drafts and review marks without publishing when the user asks to inspect them first.
 - Before publication, list discussions with `+draft`, read every returned resource including `-top`, list all files, and inspect every draft review mark.
-- Compare the live payload with the last user-approved snapshot. If any comment, body, disposition, acknowledgement, dismissal, or file mark changed, show the delta and obtain fresh approval.
+- If the user asked to inspect drafts before publication, compare the live payload with their last approved snapshot. If any comment, body, disposition, acknowledgement, dismissal, or file mark changed, show the delta and obtain fresh approval.
 - Publish only the audited payload, then verify that no drafts remain, no publication is queued, and no files still need SAGE review.
 
 Review as an experienced frontend/product engineer who knows Reviewable deeply, not as a generic static analyzer. Answer: will this behave well in the real app, across real review workflows, with Reviewable's state, layout, and data model constraints?
