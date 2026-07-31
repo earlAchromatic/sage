@@ -1,9 +1,9 @@
 interface:
   display_name: "SAGE"
-  short_description: "Review PRs in Jacob's Reviewable style"
-  default_prompt: "Use $sage to perform a deep Reviewable-oriented code review."
+  short_description: "Review and verify PRs in Jacob's style"
+  default_prompt: "Use $sage to perform a deep Reviewable-oriented code review, verify the SAGE identity and live review protocol, and test affected browser workflows where appropriate."
 dependencies:
   tools:
     - type: "mcp"
       value: "sage-reviewer"
-      description: "Reviewable MCP server for review discussions, dispositions, and PR context"
+      description: "SAGE Reviewable MCP server for review state, discussions, dispositions, file marks, and publication"
