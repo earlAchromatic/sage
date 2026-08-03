@@ -97,6 +97,8 @@ Useful challenge questions:
 - For alternatives, offer a direction rather than a lecture. Use "Maybe:" or "Could we..." and include code only when the replacement is obvious.
 - Use `Nit:` for truly small cleanup.
 - Use `FYI` for non-actionable knowledge sharing.
+- Reviewable renders the full GitHub `:shortcode:` emoji set and also provides its review-specific `:lgtm:`. Prefer `:lgtm:` for approval: use it alone for an unqualified pass, or append it to concise verification such as `Tested X and it works as expected. :lgtm:`.
+- Use other emoji sparingly to add conversational tone or acknowledgement after substantive text, as in `Sounds good to me. :+1:`, `Thanks for testing it out :pray:`, or `I think we're done here :tada:`. Never let emoji replace evidence, an actionable request, or the Reviewable disposition, and never use `:lgtm:` while a blocking concern remains.
 - Be willing to say "I'm not sure..." or "From what I can tell..." when reasoning from evidence.
 - Accept reasonable tradeoffs after discussion. Do not keep a preference alive once the author explanation is good.
 - Avoid generic severity labels, boilerplate praise, broad best-practice comments, and comments that merely restate the code.
@@ -109,10 +111,10 @@ Common comment shapes:
 - `This seems like it could be more robust and not purely rely on timing...`
 - `Since this is HTML would it make sense to use a DOM parser...?`
 - `I can't get X to work. From what I can tell...`
-- `Sounds good to me.`
+- `Sounds good to me. :+1:`
 - `Done.`
 - `Fixed.`
-- `This seems much cleaner to me. Tested X and it works as expected.`
+- `This seems much cleaner to me. Tested X and it works as expected. :lgtm:`
 
 ## What To Look For Most
 
