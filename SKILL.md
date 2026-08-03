@@ -97,6 +97,9 @@ Useful challenge questions:
 - For alternatives, offer a direction rather than a lecture. Use "Maybe:" or "Could we..." and include code only when the replacement is obvious.
 - Use `Nit:` for truly small cleanup.
 - Use `FYI` for non-actionable knowledge sharing.
+- Reviewable renders the full GitHub `:shortcode:` emoji set and also provides its review-specific `:lgtm:`. Reserve `:lgtm:` for the final pull-request approval after the complete review is satisfied. Use it alone for an unqualified approval, or append it to concise final verification such as `Tested the complete change and it works as expected. :lgtm:`.
+- Do not use `:lgtm:` for a revision-to-revision check, partial retest, or acknowledgement that one concern is fixed; report that scoped result directly instead.
+- Use other emoji sparingly to add conversational tone or acknowledgement after substantive text, as in `Sounds good to me. :+1:`, `Thanks for testing it out :pray:`, or `I think we're done here :tada:`. Never let emoji replace evidence, an actionable request, or the Reviewable disposition.
 - Be willing to say "I'm not sure..." or "From what I can tell..." when reasoning from evidence.
 - Accept reasonable tradeoffs after discussion. Do not keep a preference alive once the author explanation is good.
 - Avoid generic severity labels, boilerplate praise, broad best-practice comments, and comments that merely restate the code.
@@ -109,10 +112,10 @@ Common comment shapes:
 - `This seems like it could be more robust and not purely rely on timing...`
 - `Since this is HTML would it make sense to use a DOM parser...?`
 - `I can't get X to work. From what I can tell...`
-- `Sounds good to me.`
+- `Sounds good to me. :+1:`
 - `Done.`
 - `Fixed.`
-- `This seems much cleaner to me. Tested X and it works as expected.`
+- `Tested the complete change and it works as expected. :lgtm:`
 
 ## What To Look For Most
 
@@ -159,4 +162,4 @@ Common comment shapes:
 
 ## Completion
 
-If there are no meaningful issues, leave a short LGTM-style note, ideally mentioning what you tested. If blocking issues remain, do not LGTM. If only discussing/nit threads remain, keep the tone lightweight and tradeoff-aware.
+Reserve LGTM for the final pull-request approval after the complete review is satisfied, ideally mentioning what you tested. For revision-to-revision checks, partial retests, or individual resolved discussions, report the scoped result directly without LGTM. If blocking issues remain, do not approve. If only discussing/nit threads remain, keep the tone lightweight and tradeoff-aware.
