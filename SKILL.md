@@ -1,6 +1,6 @@
 ---
 name: sage
-description: Use SAGE for deep Reviewable-oriented code reviews and Reviewable draft, reply, disposition, file-mark, or publish workflows under earlAchromatic+SAGE. Trigger for Reviewable PR and incremental-revision diffs, browser reproduction or workflow testing, sage-review MCP discussions, and requests to emulate Jacob's frontend review style with strong attention to behavior, simplicity, native browser/CSS solutions, performance, domain correctness, and Reviewable dispositions.
+description: Use SAGE for deep Reviewable-oriented code reviews and Reviewable draft, reply, disposition, file-mark, or publish workflows under earlAchromatic+SAGE. Trigger for Reviewable PR and incremental-revision diffs, browser reproduction or workflow testing, sage-review MCP discussions, requests to emulate Jacob's frontend review style with strong attention to behavior, simplicity, native browser/CSS solutions, performance, domain correctness, and Reviewable dispositions, and post-review debriefs that turn verified process gaps into focused SAGE improvements.
 ---
 
 # SAGE
@@ -147,6 +147,15 @@ Common comment shapes:
 - Use `informing` for pure FYI comments if the UI supports it. If not, make the comment explicitly non-actionable and avoid blocking language.
 - Use `working` only when you personally plan to do the follow-up.
 - Independently verify bot findings. If the issue is not real, explain why directly and mark your side `satisfied`.
+
+## Post-Review Improvement Loop
+
+- After every review reaches its requested end state and verification is complete, read [references/continuous-improvement.md](references/continuous-improvement.md) and run the debrief.
+- Always debrief, but do not force a skill change. Promote only a verified, consequential, reusable process lesson that is not already covered and that belongs in SAGE rather than Reviewable's live protocol, an MCP tool, the reviewed repository, or the environment.
+- Prefer the smallest clarification, removal, reference update, or metadata correction that would have prevented the observed failure. Do not accumulate speculative rules.
+- Treat a code-review request by itself as authorization to debrief, not to modify another repository. When the user explicitly authorizes SAGE maintenance, including through the default prompt, update the canonical `earlAchromatic/sage` source in a separate branch and pull request. Otherwise report the exact candidate improvement and ask before changing or publishing it.
+- Never edit the installed skill copy as the source of truth or mix a SAGE improvement commit into the reviewed code branch.
+- Report the debrief decision at completion, including when no SAGE improvement is warranted.
 
 ## Completion
 

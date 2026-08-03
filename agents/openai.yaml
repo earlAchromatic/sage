@@ -1,7 +1,7 @@
 interface:
   display_name: "SAGE"
-  short_description: "Review and verify PRs in Jacob's style"
-  default_prompt: "Use $sage to perform a deep Reviewable-oriented code review, verify the SAGE identity and live review protocol, and test affected browser workflows where appropriate."
+  short_description: "Review, verify, and improve PR reviews"
+  default_prompt: "Use $sage to perform and verify a deep Reviewable-oriented code review, then debrief it and open a separate SAGE improvement PR for any qualified process gap."
 dependencies:
   tools:
     - type: "mcp"
