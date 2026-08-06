@@ -26,6 +26,7 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
 - Read virtual files, including `-- commits`, at exact Reviewable revisions and diff their returned content locally.
 - Treat discussion lines as coordinates in the recorded file path at the recorded commit. Inspect them with `git show commit:path`; use checkout line numbers only when the checkout is clean and `HEAD` equals that commit.
 - Inspect existing discussions before drafting feedback. Prefer replying with new evidence over creating a duplicate thread.
+- When reviewing as an agent for a human owner, audit all discussion text for explicit mentions of the owner's handle before finalizing drafts. `+needs:me` is scoped to the agent identity and will not surface mentions of the owner.
 
 ## Draft and Publication Safety
 
