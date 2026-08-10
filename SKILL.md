@@ -19,6 +19,11 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
 - Stop on an identity mismatch. Never fall back to generic `mcp__reviewable__*`, author/replicant Reviewable tools, GitHub review comments, or another identity for writes.
 - Pass the same pull request or branch reference to every Reviewable call.
 - Before starting a workflow, read the relevant live `reviewable://skills/...` resource exposed by `sage-review`. For code review, always read `reviewable://skills/review-code` and follow it as the operational source of truth.
+- Treat a user restriction against Reviewable actions as covering indirect writes. Before starting
+  local services or browser testing, inspect their backend configuration and background workers;
+  do not connect a supposedly read-only workflow to a shared environment where page loads can
+  sync, reconcile, enqueue, or update Reviewable state. Use isolated emulators or no-op connectors,
+  or keep the verification static and report the limitation.
 - If a needed operation seems unavailable, inspect the SAGE MCP tools and resources before falling back. Use GitHub only for a capability Reviewable truly lacks, explain why, and keep the fallback narrowly scoped.
 - If a wrong-identity write occurs, stop, report every affected draft key and body, keep it unpublished, and explain any manual cleanup required when the connection cannot delete drafts.
 
