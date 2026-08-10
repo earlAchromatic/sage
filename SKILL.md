@@ -9,6 +9,11 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
 
 ## Identity and Protocol Safety
 
+- Resolve the review set before the first Reviewable write. When the user names a theme, feature,
+  initiative, or plural PR set without exact references, enumerate candidate PRs with repository,
+  number, title, author, and companion relationship. State the chosen set to the user, and obtain
+  confirmation when multiple plausible sets remain. Do not silently include the user's own PRs
+  merely because adjacent terminology matches.
 - Use only `mcp__sage_review__*` tools for Reviewable writes. Read returned `reviewable://...` resources through the `sage-review` MCP connection.
 - Call `mcp__sage_review__whoami` before the first write and again immediately before publishing. Require `username: earlAchromatic+SAGE`, `agent: true`, and `userKey: ghagent:68669571-3`.
 - Stop on an identity mismatch. Never fall back to generic `mcp__reviewable__*`, author/replicant Reviewable tools, GitHub review comments, or another identity for writes.
@@ -30,6 +35,15 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
 ## Draft and Publication Safety
 
 - Create drafts and review marks without publishing when the user asks to inspect them first.
+- Treat both an LGTM and a published payload that marks every required file reviewed while leaving
+  no blocking or discussing feedback as merge-enabling approval. Do not publish either outcome
+  until the core behavior has been verified with evidence proportionate to its risk. When a
+  material verification gap remains, do not LGTM or publish an all-clear file-mark payload; leave
+  the relevant blocking or discussing concern explicit.
+- After any wrong-scope write, unintended publication, identity failure, or other material review
+  safety incident, switch to inspect-before-publish mode for the rest of the task. Show the exact
+  proposed review set and complete draft and mark payload, then require explicit user approval
+  before any further Reviewable write or publication.
 - Before publication, list discussions with `+draft`, read every returned resource including `-top`, list all files, and inspect every draft review mark.
 - If the user asked to inspect drafts before publication, compare the live payload with their last approved snapshot. If any comment, body, disposition, acknowledgement, dismissal, or file mark changed, show the delta and obtain fresh approval.
 - Publish only the audited payload, then verify that no drafts remain, no publication is queued, and no files still need SAGE review.
@@ -63,7 +77,13 @@ Care about correctness, UI polish, state timing, simplicity, native platform lev
    Push on unnecessary wrappers, tiny helpers, unclear route/page identity, duplicated state, hidden timing dependencies, single-use abstractions, regex parsing where structured parsing would be clearer, and logic that is shoehorned into the nearest file instead of the right owner.
 
 8. Verify proportionately.
+   Before reviewing deeply, identify the feature's core observable outcome, the boundary where it
+   occurs, and the evidence needed to establish it. Unit tests and static inspection do not replace
+   live or browser verification when the central behavior crosses Reviewable, GitHub,
+   authentication, browser, or another external integration boundary.
    Use browser testing when the change affects user-visible behavior, routing, lifecycle timing, async state, focus, hotkeys, scrolling, overlays, responsive layout, browser APIs, or another behavior static inspection cannot establish confidently. Before controlling a browser, read [references/browser-verification.md](references/browser-verification.md), define the workflow and expected result, and respect any user restriction on browser control. Compare base and PR behavior when it clarifies a regression. Only claim tests personally performed and behavior actually observed; attribute evidence supplied by the user or another reviewer.
+   If the core outcome cannot be observed, state the limitation and keep the review non-approving;
+   do not convert partial or indirect evidence into an LGTM or all-clear file marks.
 
 ## Simplicity, Native Platform, and Performance
 
