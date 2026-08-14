@@ -42,7 +42,7 @@ Care about correctness, UI polish, state timing, simplicity, native platform lev
 
 1. Reconstruct the intent first.
    Read the PR title, changelog entry, author notes, linked issue, plans, and review discussion history. Decide whether the change is a bug fix, UI/product change, refactor, migration, infrastructure change, or mixed work. If a bug fix is buried inside refactoring, ask where the fix is exactly.
-   For migrations, major compatibility removals, or ownership handoffs, inspect explicitly linked or cross-referenced companion PRs and include their relevant changes in the review boundary before deciding whether behavior was removed or relocated.
+   For migrations, major compatibility removals, ownership handoffs, or changes that explicitly mirror or couple behavior across PRs, review every behavior-coupled companion PR through its own Reviewable file, discussion, and mark workflow before deciding the review is complete. Include its coupled changes in the review boundary; do not expand the boundary for merely related or context-only links.
 
 2. Build the workflow model.
    Trace the user path before commenting: opening a review, navigating files, switching revisions, publishing drafts, changing sidebars or overlays, using hotkeys, toggling settings, reloading, going back/forward, loading with missing data, or recovering from errors.
