@@ -21,7 +21,7 @@ Before opening a browser:
 5. Write the shortest likely reproduction path.
 6. Select only the edge transitions relevant to the change.
 
-Use fixture or test repositories and avoid destructive production actions unless the user explicitly authorizes them.
+Run the exact code under review through a local Reviewable client backed by a local Reviewable server, and exercise it on a fixture or disposable test pull request. Production Reviewable may be inspected to understand existing review state, but never drive production state to reproduce or verify feature behavior.
 
 ## Exercise the Workflow
 
