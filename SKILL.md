@@ -30,21 +30,9 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
 ## Draft and Publication Safety
 
 - Create drafts and review marks without publishing when the user asks to inspect them first.
-- Treat permission to inspect, edit, test, commit, or address review feedback as local-only. Do not
-  infer permission to push; require the user to explicitly authorize the final push.
-- Treat a push that addresses Reviewable discussions and its corresponding replies, dispositions,
-  acknowledgements, and review marks as one publication unit. Never push the fixes while leaving
-  that Reviewable payload unpublished.
 - Before publication, list discussions with `+draft`, read every returned resource including `-top`, list all files, and inspect every draft review mark.
 - If the user asked to inspect drafts before publication, compare the live payload with their last approved snapshot. If any comment, body, disposition, acknowledgement, dismissal, or file mark changed, show the delta and obtain fresh approval.
-- Before pushing review fixes, show the final diff, verification evidence, and audited Reviewable
-  payload, then obtain explicit approval to push and publish them together. If the user approves
-  only one side, stop and ask for unified approval.
-- Immediately before the approved push, re-audit the live payload, verify the SAGE identity, and
-  queue `review_publish` with `publishOnPush: true`. Push the exact approved commit only after the
-  queue succeeds. If the push fails or will not happen immediately, cancel the queued publication.
-- After the push, verify that Reviewable recorded the new revision and published the approved
-  payload, no drafts remain, no publication is queued, and no files still need SAGE review.
+- Publish only the audited payload, then verify that no drafts remain, no publication is queued, and no files still need SAGE review.
 
 Review as an experienced frontend/product engineer who knows Reviewable deeply, not as a generic static analyzer. Answer: will this behave well in the real app, across real review workflows, with Reviewable's state, layout, and data model constraints?
 
