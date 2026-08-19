@@ -12,13 +12,13 @@ Lead with the outcome and current write state. Then tell one causal story in the
 4. Immediately after any affected mechanism, insert the finding, evidence, disposition, human-readable location, and exact proposed comment.
 5. Continue the story after the comment instead of restarting it in a separate findings inventory.
 
-For coupled pull requests, name the exact pull requests and their companion relationship, then group the story by repository or subsystem in dependency order. For an incremental re-review, focus on what changed since the last reviewed revision and place replies beside the revised behavior.
+For coupled pull requests, name the exact pull requests and their companion relationship, then group the story by repository or subsystem in dependency order. For an incremental re-review, tell each file's story from its Reviewable-provided comparison—its last direct review mark, or the target base when it has no mark—and place replies beside the revised behavior.
 
 Make the distinction between analysis and publication unmistakable:
 
 - Use `Finding — <disposition>: <short title>` for the reviewer explanation.
 - Use `Proposed new thread`, `Proposed reply to <descriptive discussion title>`, or `Proposed top-level summary` before the exact text.
-- Give a file path, Reviewable revision, and line for an inline starter. Identify an existing discussion by a descriptive title or link, not only an opaque key.
+- Give a file path, Reviewable revision, and line for an inline starter. When a discussion resource includes a `url`, identify the existing discussion with a descriptive Markdown link; use an unlinked descriptive title only when no URL is available. Never identify it only by an opaque key.
 - Put exact Reviewable text in a blockquote and do not paraphrase it elsewhere.
 - State whether the text is chat-only, drafted, or published.
 
@@ -27,7 +27,7 @@ The woven narrative is the human-readable publication snapshot. Do not follow it
 - Personally performed verification and honest limitations.
 - Files proposed for review marks, by path and Reviewable revision.
 - Acknowledgements, dismissals, and disposition-only changes, including an explicit `none` when relevant.
-- The exact top-level summary or LGTM, if proposed.
+- The exact top-level summary or LGTM, if proposed. Do not assign a disposition to a comment; list participant disposition changes separately.
 - The consequence of publishing: what would remain blocking or discussing and whether an approval plus marks would make the review merge-enabling.
 - Draft and publication state, followed by a request to approve, edit, or reject when required.
 
@@ -87,7 +87,7 @@ An empty mounted marks model is still truthy, so a first-time author enters the 
 
 **Finding — blocking: first-time authors get the wrong Automatic range.**
 
-Proposed reply to **First-time Automatic diff** — `src/model/reviews/files/reviews.$reviewKey.files.$fileKey.diff.js`, r8, line 324:
+Proposed reply to [**First-time Automatic diff**](https://reviewable.io/reviews/Reviewable/reviewable-client/2003#gh-3701995517) — `src/model/reviews/files/reviews.$reviewKey.files.$fileKey.diff.js`, r8, line 324:
 
 > This is still reproducible with an empty mounted marks model: there are no author marks, but the model unwraps to a truthy `{}`, so Automatic returns the full base-to-latest range instead of provisional changes. Could we wait for review state and test whether the marks collection is nonempty before taking the previously-reviewed branch?
 
@@ -111,7 +111,7 @@ The docs reproduce the self-review pupil with separate markup. Its pupil is abso
 
 **Finding — discussing: the documented pupil lacks an anchor.**
 
-Proposed reply to **Anchor the self-review pupil** — `docs/.vitepress/theme/custom.css`, r10, line 285:
+Proposed reply to [**Anchor the self-review pupil**](https://reviewable.io/reviews/Reviewable/Reviewable/1322#gh-3701367867) — `docs/.vitepress/theme/custom.css`, r10, line 285:
 
 > The pupil is still absolutely positioned while the wrapper used in the example has no positioning rule. Since the positioned icon is a sibling, it cannot establish the pupil's containing block. Could we add `position: relative` to the wrapper or move the pupil inside the positioned element?
 
