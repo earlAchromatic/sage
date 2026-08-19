@@ -30,9 +30,23 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
 ## Draft and Publication Safety
 
 - Create drafts and review marks without publishing when the user asks to inspect them first.
-- Before publication, list discussions with `+draft`, read every returned resource including `-top`, list all files, and inspect every draft review mark.
-- If the user asked to inspect drafts before publication, compare the live payload with their last approved snapshot. If any comment, body, disposition, acknowledgement, dismissal, or file mark changed, show the delta and obtain fresh approval.
-- Publish only the audited payload, then verify that no drafts remain, no publication is queued, and no files still need SAGE review.
+- Before publication, list discussions with `+draft`, read every returned resource including `-top`,
+  list all files, and inspect every draft review mark.
+- When presenting Reviewable state for approval, show the human reviewer a plain-English
+  publication snapshot, not a tool transcript. Quote without paraphrase the exact body text
+  Reviewable will publish for every starter draft, reply, and top-level summary, including any
+  `:lgtm:`; give each discussion's review-level or file path/revision/line location and disposition;
+  identify every pending acknowledgement and dismissal by the affected discussion and any
+  disposition change; and list every draft file review mark by path and Reviewable revision. State
+  explicitly when a category is empty. Do not expose raw Reviewable tool payloads, JSON, resource,
+  discussion, or file keys, API schemas, or operation objects unless the user explicitly requests
+  them.
+- If the user asked to inspect drafts before publication, compare the live Reviewable state with
+  their last approved publication snapshot. If any body, location, disposition, acknowledgement,
+  dismissal, or file mark changed, show the delta in the same human-readable form and obtain fresh
+  approval.
+- Publish only the Reviewable state in the approved publication snapshot, then verify that no
+  drafts remain, no publication is queued, and no files still need SAGE review.
 
 Review as an experienced frontend/product engineer who knows Reviewable deeply, not as a generic static analyzer. Answer: will this behave well in the real app, across real review workflows, with Reviewable's state, layout, and data model constraints?
 
