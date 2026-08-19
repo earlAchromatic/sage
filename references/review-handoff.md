@@ -27,7 +27,7 @@ The woven narrative is the human-readable publication snapshot. Do not follow it
 - Personally performed verification and honest limitations.
 - Files proposed for review marks, by path and Reviewable revision.
 - Acknowledgements, dismissals, and disposition-only changes, including an explicit `none` when relevant.
-- The exact top-level summary or LGTM, if proposed. Do not assign a disposition to a comment; list participant disposition changes separately.
+- The exact top-level summary or LGTM, if proposed. Do not attach a disposition to the top-level comment or `-top` discussion; other discussions still require one.
 - The consequence of publishing: what would remain blocking or discussing and whether an approval plus marks would make the review merge-enabling.
 - Draft and publication state, followed by a request to approve, edit, or reject when required.
 
