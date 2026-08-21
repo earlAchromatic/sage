@@ -166,6 +166,13 @@ Common comment shapes:
 - Use `working` only when you personally plan to do the follow-up.
 - Independently verify bot findings. If the issue is not real, explain why directly and mark your side `satisfied`.
 
+## Review Handoff
+
+- Before writing a substantive review handoff, including an initial review, incremental re-review, or inspect-before-publish checkpoint, read [references/review-handoff.md](references/review-handoff.md) and follow its story-first examples.
+- Explain the intent, root cause, implementation, and user or workflow impact in causal order. Immediately after the affected part of that story, present each finding with its evidence, disposition, human-readable location, and exact proposed Reviewable text.
+- Treat this interleaved narrative as the publication snapshot. Do not make the reviewer correlate separate story, findings, and payload inventories or repeat the exact draft bodies in a second section.
+- Finish with compact verification and limitations, remaining non-comment publication actions, the consequence of publishing the proposed state, current write state, and an approval request when approval is required. Adapt the headings to the change instead of filling an empty fixed template.
+
 ## Post-Review Improvement Loop
 
 - After every review reaches its requested end state and verification is complete, read [references/continuous-improvement.md](references/continuous-improvement.md) and run the debrief.
