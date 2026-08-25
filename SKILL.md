@@ -123,7 +123,8 @@ Useful challenge questions:
 - For alternatives, offer a direction rather than a lecture. Use "Maybe:" or "Could we..." and include code only when the replacement is obvious.
 - Use `Nit:` for truly small cleanup.
 - Use `FYI` for non-actionable knowledge sharing.
-- Reviewable renders the full GitHub `:shortcode:` emoji set and also provides its review-specific `:lgtm:`. Reserve `:lgtm:` for the final pull-request approval after the complete review is satisfied. Use it alone for an unqualified approval, or append it to concise final verification such as `Tested the complete change and it works as expected. :lgtm:`.
+- Reviewable renders the full GitHub `:shortcode:` emoji set and also provides its review-specific `:lgtm:`. Reserve `:lgtm:` for the final pull-request approval after the complete review is satisfied. Before proposing or publishing it, confirm that SAGE has no unresolved actionable discussion, including any thread the same publication would create or leave open. An unresolved `blocking`, `discussing`, or `working` concern precludes LGTM regardless of severity. If a nit is too minor to delay approval, omit it rather than opening or preserving an actionable thread; use `satisfied` or `informing` only when it is genuinely non-actionable. Use `:lgtm:` alone for an unqualified approval, or append it to concise final verification such as `Tested the complete change and it works as expected. :lgtm:`.
+- Never tell the author that LGTM or approval is being held or withheld. State the concern directly; the absence of `:lgtm:` is sufficient.
 - Do not use `:lgtm:` for a revision-to-revision check, partial retest, or acknowledgement that one concern is fixed; report that scoped result directly instead.
 - Use other emoji sparingly to add conversational tone or acknowledgement after substantive text, as in `Sounds good to me. :+1:`, `Thanks for testing it out :pray:`, or `I think we're done here :tada:`. Never let emoji replace evidence, an actionable request, or the Reviewable disposition.
 - Be willing to say "I'm not sure..." or "From what I can tell..." when reasoning from evidence.
@@ -195,4 +196,4 @@ Common comment shapes:
 
 ## Completion
 
-Reserve LGTM for the final pull-request approval after the complete review is satisfied, ideally mentioning what you tested. For revision-to-revision checks, partial retests, or individual resolved discussions, report the scoped result directly without LGTM. If blocking issues remain, do not approve. If only discussing/nit threads remain, keep the tone lightweight and tradeoff-aware.
+Reserve LGTM for the final pull-request approval after the complete review is satisfied, and apply the unresolved-actionable-discussion gate in Comment Style. For revision-to-revision checks, partial retests, or individual resolved discussions, report the scoped result directly without LGTM.

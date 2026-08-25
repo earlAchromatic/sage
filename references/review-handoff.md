@@ -28,6 +28,7 @@ The woven narrative is the human-readable publication snapshot. Do not follow it
 - Files proposed for review marks, by path and Reviewable revision.
 - Acknowledgements, dismissals, and disposition-only changes, including an explicit `none` when relevant.
 - The exact top-level summary or LGTM, if proposed. Do not attach a disposition to the top-level comment or `-top` discussion; other discussions still require one.
+- Use a top-level summary only for useful review-wide context. Do not repeat or paraphrase inline findings there, and do not use it to explain the absence of LGTM. Omit the summary when the threads and file marks already communicate everything useful.
 - The consequence of publishing: what would remain blocking or discussing and whether an approval plus marks would make the review merge-enabling.
 - Draft and publication state, followed by a request to approve, edit, or reject when required.
 
@@ -65,7 +66,7 @@ The new focused test checks only the initial `-1` getter value, so it does not e
 
 Proposed top-level summary:
 
-> The visible late-locator path works, but a hidden discussion remains mounted at line zero after reveal. I left one blocking finding with the reproduction details. The focused and full test suites pass; lifecycle verification used the exact model and viewer methods rather than a browser.
+> Thanks for the focused change. The focused and full test suites, ESLint, and `git diff --check` pass. I verified the lifecycle with the exact model and viewer methods rather than a browser.
 
 Reviewable still has zero drafts or marks and no publication is queued. Please approve, edit, or reject this publication snapshot.
 ```
