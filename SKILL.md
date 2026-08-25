@@ -45,6 +45,17 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
   their last approved publication snapshot. If any body, location, disposition, acknowledgement,
   dismissal, or file mark changed, show the delta in the same human-readable form and obtain fresh
   approval.
+- Do not delegate final publication. Inspection, drafting, and review marks may be delegated, but
+  the primary agent handling the user conversation must audit the final snapshot, perform the
+  immediately-prepublish identity check, and call the SAGE publish tool itself. Never ask an
+  existing or fresh agent to publish through an assistant-authored quotation, summary, fork, or
+  handoff of the user's approval. If the primary context lacks the SAGE publishing capability,
+  preserve the staged state and report that execution-routing problem.
+- Once the user approves an exact publication snapshot and it remains unchanged, do not ask them
+  to repeat that approval because of internal routing, preflight checks, or a delegated attempt.
+  Return publication to the primary context that received the user-authored approval. If its direct
+  publish attempt is still rejected despite an unchanged approved snapshot, report a tool or policy
+  defect rather than claiming the user's approval is missing or asking them to restate it.
 - Publish only the Reviewable state in the approved publication snapshot, then verify that no
   drafts remain, no publication is queued, and no files still need SAGE review.
 
