@@ -34,7 +34,7 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
   list all files, and inspect every draft review mark.
 - When presenting Reviewable state for approval, show the human reviewer a plain-English
   publication snapshot, not a tool transcript. Quote without paraphrase the exact body text
-  Reviewable will publish for every starter draft, reply, and top-level summary, including any
+  Reviewable will publish for every starter draft, reply, and top-level comment, including any
   `:lgtm:`; give each discussion's review-level or file path/revision/line location and disposition;
   identify every pending acknowledgement and dismissal by the affected discussion and any
   disposition change; and list every draft file review mark by path and Reviewable revision. State
@@ -114,6 +114,7 @@ Useful challenge questions:
 
 ## Comment Style
 
+- Default to no top-level comment when the inline discussions already carry the findings and follow-up. Do not automatically draft a recap of the review, revision, or resolved and remaining concerns. Use top-level text when it adds a distinct review-level question or decision, clarifies review scope or next steps the author needs to know, supplies otherwise-missing overall verification, or gives final approval. Keep a retest or acceptance of one concern in its existing thread. Jacob's history includes occasional concise overall assessments, not a summary after every pass; see [the historical evidence and counterexamples](references/top-level-comments.md).
 - Leave one focused thread per concern, anchored to the most relevant line.
 - If the actionable code is unchanged and unavailable in Reviewable, anchor to the changed line that introduces the behavior and explicitly identify the actionable path and line in the body, or use review-level feedback when a changed-line anchor would mislead.
 - Default to precise questions unless the problem is verified.
