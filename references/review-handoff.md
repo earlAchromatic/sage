@@ -2,6 +2,8 @@
 
 Use this format for the first complete review report, a re-review that introduces or revises findings, and any checkpoint where the user will decide what SAGE should publish.
 
+This is the complete private explanation and publication snapshot for Jacob. It does not require a top-level Reviewable comment. Choose any posted top-level text using the Comment Style guidance in `SKILL.md`; keep the causal story, exact drafts, publication actions, verification, limitations, and approval gate here even when no top-level comment is proposed.
+
 ## Shape the Narrative
 
 Lead with the outcome and current write state. Then tell one causal story in the order the code or user workflow operates:
@@ -17,7 +19,7 @@ For coupled pull requests, name the exact pull requests and their companion rela
 Make the distinction between analysis and publication unmistakable:
 
 - Use `Finding — <disposition>: <short title>` for the reviewer explanation.
-- Use `Proposed new thread`, `Proposed reply to <descriptive discussion title>`, or `Proposed top-level summary` before the exact text.
+- Use `Proposed new thread`, `Proposed reply to <descriptive discussion title>`, or `Proposed top-level comment` before the exact text.
 - Give a file path, Reviewable revision, and line for an inline starter. When a discussion resource includes a `url`, identify the existing discussion with a descriptive Markdown link; use an unlinked descriptive title only when no URL is available. Never identify it only by an opaque key.
 - Put exact Reviewable text in a blockquote and do not paraphrase it elsewhere.
 - State whether the text is chat-only, drafted, or published.
@@ -27,11 +29,11 @@ The woven narrative is the human-readable publication snapshot. Do not follow it
 - Personally performed verification and honest limitations.
 - Files proposed for review marks, by path and Reviewable revision.
 - Acknowledgements, dismissals, and disposition-only changes, including an explicit `none` when relevant.
-- The exact top-level summary or LGTM, if proposed. Do not attach a disposition to the top-level comment or `-top` discussion; other discussions still require one.
+- The exact top-level comment or LGTM, if proposed; otherwise state `Top-level comment: none`. Do not attach a disposition to the top-level comment or `-top` discussion; other discussions still require one.
 - The consequence of publishing: what would remain blocking or discussing and whether an approval plus marks would make the review merge-enabling.
 - Draft and publication state, followed by a request to approve, edit, or reject when required.
 
-Skip headings and categories that add no information. A clean review should be shorter than a review with findings.
+Skip narrative headings that add no information, while still stating empty publication categories explicitly. A clean review should be shorter than a review with findings.
 
 ## Example: Single Pull Request With a Finding
 
@@ -61,11 +63,8 @@ The new focused test checks only the initial `-1` getter value, so it does not e
 - Browser verification was not completed; the lifecycle reproduction used the exact model and viewer methods.
 - Proposed review marks at r2: `-- commits`, `src/model/reviews/discussions/reviews.$reviewKey.discussions.top.locators.$discussionKey.js`, and `tests/locator-visibility.test.js`.
 - Acknowledgements, dismissals, and disposition-only changes: none.
+- Replies and top-level comment: none.
 - Publishing this would leave one blocking thread and would not approve or complete the review.
-
-Proposed top-level summary:
-
-> The visible late-locator path works, but a hidden discussion remains mounted at line zero after reveal. I left one blocking finding with the reproduction details. The focused and full test suites pass; lifecycle verification used the exact model and viewer methods rather than a browser.
 
 Reviewable still has zero drafts or marks and no publication is queued. Please approve, edit, or reject this publication snapshot.
 ```
@@ -122,6 +121,7 @@ Proposed reply to [**Anchor the self-review pupil**](https://reviewable.io/revie
 - Documentation build and example parsing passed.
 - Proposed review marks: client r8 — `-- commits`, `src/model/reviews/files/reviews.$reviewKey.files.$fileKey.diff.js`, and `src/view/reviews/files/toggle-review-mark-button.vue`; server r5 — `-- commits` and `src/coherence.ts`; docs r10 — `-- commits` and `docs/.vitepress/theme/custom.css`.
 - Acknowledgements, dismissals, and disposition-only changes: none.
+- Top-level comment: none.
 - No LGTM while the two blocking findings remain.
 - Publishing this would leave the two client threads blocking, so it would not approve or complete the coupled review.
 
