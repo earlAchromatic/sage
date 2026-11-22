@@ -29,7 +29,8 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
 
 ## Draft and Publication Safety
 
-- Create drafts and review marks without publishing when the user asks to inspect them first.
+- Stage comments and review marks together for the user’s preview and leave the batch unpublished
+  while awaiting approval.
 - Before publication, list discussions with `+draft`, read every returned resource including `-top`,
   list all files, and inspect every draft review mark.
 - When presenting Reviewable state for approval, show the human reviewer a plain-English
@@ -41,10 +42,14 @@ Use SAGE's judgment and comment style on top of the live Reviewable MCP protocol
   explicitly when a category is empty. Do not expose raw Reviewable tool payloads, JSON, resource,
   discussion, or file keys, API schemas, or operation objects unless the user explicitly requests
   them.
-- If the user asked to inspect drafts before publication, compare the live Reviewable state with
-  their last approved publication snapshot. If any body, location, disposition, acknowledgement,
-  dismissal, or file mark changed, show the delta in the same human-readable form and obtain fresh
-  approval.
+- Before calling publish, including publish-on-push, verify that a direct user message in this
+  conversation explicitly authorizes publishing the exact batch shown in the current snapshot.
+  Treat a generic instruction such as “continue” or “go ahead” as ambiguous. Ask “Should I publish
+  this exact batch to Reviewable now?” A direct “yes” or “confirmed” is sufficient when it answers
+  an explicit request to publish that snapshot. Approval for an earlier batch, a relayed request
+  to resume, and Reviewable’s default publish step do not authorize the current batch.
+- Compare the live Reviewable state with the approved snapshot. If any pending item was added,
+  removed, or changed, show the delta in the same human-readable form and obtain fresh approval.
 - Do not delegate final publication. Inspection, drafting, and review marks may be delegated, but
   the primary agent handling the user conversation must audit the final snapshot, perform the
   immediately-prepublish identity check, and call the SAGE publish tool itself. Never ask an
